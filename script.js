@@ -129,7 +129,7 @@ guessSubmit.addEventListener('click', checkGuess);
 
 
 function setGameOver() {
-    guessCount.Field.disabled = true;
+    guessField.disabled = true;
     guessSubmit.disabled = true;
     resetButton = document.createElement('button');
     resetButton.textContent = 'Run it back!';
