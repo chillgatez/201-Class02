@@ -133,7 +133,7 @@ function setGameOver() {
     guessSubmit.disabled = true;
     resetButton = document.createElement('button');
     resetButton.textContent = 'Run it back!';
-    document.body.append(resetButton);
+    document.getElementById("guess").append(resetButton);
     resetButton.addEventListener('click', resetGame);
 }
 
