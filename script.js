@@ -103,7 +103,7 @@ function checkGuess() {
         lowOrHi.textContent = '';
         setGameOver();
 
-    } else if (guessCount === 10) {
+    } else if (guessCount === 4) {
         lastResult.textContent = 'Game over! You can go listen to Lil Flip cause you wont be getting a private link to my new album.';
         lowOrHi.textContent = '';
         setGameOver();
@@ -125,6 +125,7 @@ function checkGuess() {
 }
 
 guessSubmit.addEventListener('click', checkGuess);
+
 
 function setGameOver() {
     guessCount.Field.disabled = true;
