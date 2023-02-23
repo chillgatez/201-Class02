@@ -89,6 +89,7 @@ const guessField = document.querySelector('.guessField');
 
 let guessCount = 1;
 let resetButton;
+guessField.focus()
 
 function checkGuess() {
     const userGuess = Number(guessField.value);
@@ -131,7 +132,7 @@ function setGameOver() {
     guessCount.Field.disabled = true;
     guessSubmit.disabled = true;
     resetButton = document.createElement('button');
-    resetButton.textContent = 'Run it back!'
+    resetButton.textContent = 'Run it back!';
     document.body.append(resetButton);
     resetButton.addEventListener('click', resetGame);
 }
