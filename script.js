@@ -5,8 +5,9 @@ alert(`Welcome ${user}! It's nice to meet you.`);
 
 let score = 0;
 
+//lab1 quiz function
 document.querySelector("button").addEventListener("click", () => {
-    //alert(`ouch, ${user}! that hurt`);
+    
 
     let q1 = prompt('Is this website about Kelsee?');
     let q1low = q1.toLowerCase();
@@ -64,7 +65,7 @@ document.querySelector("button").addEventListener("click", () => {
     let q5 = prompt('Did Kelsee work for Reebok?');
     let q5low = q2.toLowerCase();
 
-    if (q2low == 'no' || q2low == 'n') {
+    if (q5low == 'no' || q5low == 'n') {
         //console.log('Correct!');
         alert(`Good job, ${user}! You're doing good.`);
         score++;
@@ -74,12 +75,12 @@ document.querySelector("button").addEventListener("click", () => {
         alert(`Honestly, ${user} I'm disappointed in you.`);
     }
 
-    alert(`Preciate you, ${user}, you completed the quiz with a score of ${score} out of 5.`);
+    alert(`Preciate it ${user}, mane. You completed the quiz! Don't know if you're smarter than a 5th grader but you now have a total of ${score} points.`);
 
 })
 
 let randomNumber = Math.floor(Math.random() * 30) + 1;
-
+//declares randome number
 const guesses = document.querySelector('.guesses');
 const lastResult = document.querySelector('.lastResult');
 const lowOrHi = document.querySelector('.lowOrHi');
@@ -100,12 +101,13 @@ function checkGuess() {
     guesses.textContent += `${userGuess}`;
 
     if (userGuess === randomNumber) {
-        lastResult.textContent = 'You guessed it! Check your email for the evite to my album release party!';
+        score++
+        lastResult.textContent = `Ayyyye! One point for ${user}! Go ahead and check your email for an evite to my album release party!`;
         lowOrHi.textContent = '';
         setGameOver();
 
     } else if (guessCount === 4) {
-        lastResult.textContent = 'Game over! You can go listen to Lil Flip cause you wont be getting a private link to my new album.';
+        lastResult.textContent = `Hate to break it to ya ${user}, you have earned ZERO points and you wont be getting a private link to my new album.`;
         lowOrHi.textContent = '';
         setGameOver();
 
@@ -141,7 +143,7 @@ function resetGame() {
     guessCount = 1;
     const resetParas = document.querySelectorAll('.resultsParas p');
     for (const resetPara of resetParas) {
-        resetPara.textContent = '';
+        resetPara.textContent ='';
     }
 
     resetButton.parentNode.removeChild(resetButton);
