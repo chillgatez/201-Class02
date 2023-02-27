@@ -80,7 +80,7 @@ document.querySelector("button").addEventListener("click", () => {
 })
 
 let randomNumber = Math.floor(Math.random() * 30) + 1;
-//declares randome number
+//declares random number
 const guesses = document.querySelector('.guesses');
 const lastResult = document.querySelector('.lastResult');
 const lowOrHi = document.querySelector('.lowOrHi');
@@ -142,6 +142,7 @@ function setGameOver() {
 function resetGame() {
     guessCount = 1;
     const resetParas = document.querySelectorAll('.resultsParas p');
+    //console.log(reset)
     for (const resetPara of resetParas) {
         resetPara.textContent ='';
     }
@@ -156,3 +157,4 @@ function resetGame() {
     randomNumber = Math.floor(Math.random() * 100) + 1;
 
 }
+
