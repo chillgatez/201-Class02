@@ -89,53 +89,28 @@ document.querySelector("button").addEventListener("click", () => {
         "Tranquility Base Hotel and Casino", 
         "1989"
     ];
+    let uaArr = [];
+    for (let i = 0; i < 6; i++){
+        uaArr.push(prompt("Can you name 1 of my top 10 albums?"));
+    }
 
-    let uaArr = ansArr.map(answer => {
-        return answer
-        .toLowerCase()
-        .replace(/ /g, '');
-    });
+    let correct = false;
 
-    let counter = 6;
-    for(let i = 0; i < 6; i++){
-        let q6 = prompt('Can you name 1 of my top 10 albums?');
-        let correct = false;
-
-        //prompt returns null if user hit cancel
-        if (q6 === null) q6 = "";
-
-        let strippedAns = ans.toLowerCase().replace(/ /g, '');
-        for(let j = 0; j < ansArr.length; j++) {
-            if (uaArr[j]== strippedAns); {
-                score++;
+    for(i = 0; i < uaArr.length; i++){
+        if(ua[i] == null)
+            alert ("enter an album, mane")
+        for (let j=0; j < ansArr.length; j++){
+            if (uaArr[i] == ansArr[j]){
                 correct = true;
-                let responseString = 'Correct. The other possible correct answers are:\n\n';
-                for(let i = 0; i < ansArr.legnth; i++) {
-                responseString += `${ansArr[i]},`;
-                }
-                alert(responseString);
+                score++
+                alert (`You got it! Here are all of the possible answers: ${ansArr} `)
                 break;
+            } else if (ua[i]!== ansArr[j]){
+                correct = false;
+                alert (`you didn't get it.`)
             }
         }
-        if (correct) {
-            break;
-        }   else {
-            counter--;
-            alert(`Sorry${q6} is incorrect`);
-        }
     }
- 
-    if(counter == 0) {
-        let responeString = 'sorry the possible correct answers are:\n\n';
-        for(let i = 0; i < ansArr.legnth; i++) {
-            responseString += `${ansArr[i]},`;
-        }
-        alert(responseString);
-    }
-
-    alert(
-        `Preciate it ${user}, mane. You completed the quiz! Don't know if you're smarter than a 5th grader but you now have a total ${score}/10 points.`);
-
 });
 
 
@@ -222,7 +197,7 @@ function resetGame() {
 //array - array = [43, 986, 453341, 54, 076832]
 //prompt
 //for loop
-//for(x = 0; x < Array.length; x++){
+//for(i = 0; i < Array.length; i++){
 //   if(userAns = array[x]){
 
 //    }
