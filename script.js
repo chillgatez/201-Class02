@@ -73,11 +73,71 @@ document.querySelector("button").addEventListener("click", () => {
     } else {
         //console.log('Inorrect!');
         alert(`Honestly, ${user} I'm disappointed in you.`);
+
     }
 
-    alert(`Preciate it ${user}, mane. You completed the quiz! Don't know if you're smarter than a 5th grader but you now have a total of ${score} points.`);
+    
+    let ansArr = [
+        "Mama's Gun", 
+        "The Jungle is the Only way Out", 
+        "The Gold Experience", 
+        "Love Wars",
+        "Beyonce", 
+        "Blonde",
+        "Diana Ross", 
+        "After Laughter", 
+        "Tranquility Base Hotel and Casino", 
+        "1989"
+    ];
 
-})
+    let uaArr = ansArr.map(answer => {
+        return answer
+        .toLowerCase()
+        .replace(/ /g, '');
+    });
+
+    let counter = 6;
+    for(let i = 0; i < 6; i++){
+        let q6 = prompt('Can you name 1 of my top 10 albums?');
+        let correct = false;
+
+        //prompt returns null if user hit cancel
+        if (q6 === null) q6 = "";
+
+        let strippedAns = ans.toLowerCase().replace(/ /g, '');
+        for(let j = 0; j < ansArr.length; j++) {
+            if (uaArr[j]== strippedAns); {
+                score++;
+                correct = true;
+                let responseString = 'Correct. The other possible correct answers are:\n\n';
+                for(let i = 0; i < ansArr.legnth; i++) {
+                responseString += `${ansArr[i]},`;
+                }
+                alert(responseString);
+                break;
+            }
+        }
+        if (correct) {
+            break;
+        }   else {
+            counter--;
+            alert(`Sorry${q6} is incorrect`);
+        }
+    }
+ 
+    if(counter == 0) {
+        let responeString = 'sorry the possible correct answers are:\n\n';
+        for(let i = 0; i < ansArr.legnth; i++) {
+            responseString += `${ansArr[i]},`;
+        }
+        alert(responseString);
+    }
+
+    alert(
+        `Preciate it ${user}, mane. You completed the quiz! Don't know if you're smarter than a 5th grader but you now have a total ${score}/10 points.`);
+
+});
+
 
 let randomNumber = Math.floor(Math.random() * 30) + 1;
 //declares random number
@@ -129,7 +189,7 @@ function checkGuess() {
 
 guessSubmit.addEventListener('click', checkGuess);
 
-
+//reset button generator
 function setGameOver() {
     guessField.disabled = true;
     guessSubmit.disabled = true;
@@ -139,6 +199,7 @@ function setGameOver() {
     resetButton.addEventListener('click', resetGame);
 }
 
+//clears reset paragraphs
 function resetGame() {
     guessCount = 1;
     const resetParas = document.querySelectorAll('.resultsParas p');
@@ -157,4 +218,15 @@ function resetGame() {
     randomNumber = Math.floor(Math.random() * 100) + 1;
 
 }
+
+//array - array = [43, 986, 453341, 54, 076832]
+//prompt
+//for loop
+//for(x = 0; x < Array.length; x++){
+//   if(userAns = array[x]){
+
+//    }
+    
+//}
+
 

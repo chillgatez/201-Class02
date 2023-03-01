@@ -1,0 +1,26 @@
+* {
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+body {
+        background-image: linear-gradient(135deg, #8C5A63, #DED8C9, #7E6C64);
+      }
+
+h1 {
+    color: #EABE40;
+
+}
+
+h2 {
+    color: #D9D0C1;
+    text-decoration: underline;
+}
+
+article {
+    background-color: #2C5F73;
+    border: 10px, solid, #D9D0C1;
+    border-radius:15px;
+    padding: 10px;
+    margin: 20px; 
+
+}
